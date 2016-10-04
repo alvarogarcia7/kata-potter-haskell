@@ -5,12 +5,17 @@ dist :: [a]  -> [[a]]
 dist (x:[]) = [[x]]
 dist (x:xc) = [[x]] ++ dist xc
 
-subs x = map splitInSolutions $ nonEmptySubsequences x
+subs :: Eq x => [x] -> [[[x]]]
+subs orig = map (\s -> [s, orig \\ s]) nes
   where
-    nonEmptySubsequences =  tail . subsequences 
-    splitInSolutions serie = map (\r -> [serie, r]) $ nonEmptySubsequences rest
-      where
-        rest = (x \\ serie)
-    
+    nes = nonEmptySequences orig
 
+nonEmptySequences :: [x] -> [[x]]
+nonEmptySequences [] = [[]]
+nonEmptySequences x = sortBy len $ (tail . subsequences) x
+
+
+len a b  | length a < length b = LT
+         | length a == length b = EQ
+         | otherwise = GT
 
