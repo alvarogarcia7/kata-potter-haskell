@@ -1,12 +1,12 @@
 import Data.List
-import Debug.Trace
+import Control.Monad
 
 dist :: [a]  -> [[a]]
 dist (x:[]) = [[x]]
 dist (x:xc) = [[x]] ++ dist xc
 
-subs :: Eq x => [x] -> [[[x]]]
-subs orig = map (\s -> [s, orig \\ s]) nes
+splitIn :: Eq x => [x] -> [[[x]]]
+splitIn orig = map (\s -> [s, orig \\ s]) nes
   where
     nes = nonEmptySequences orig
 
