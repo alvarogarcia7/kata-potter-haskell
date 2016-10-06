@@ -1,5 +1,4 @@
 (require 'clojure.math.combinatorics)
-(clojure.math.combinatorics/combinations [1,2,3])
 (clojure.math.combinatorics/combinations [1,2,3] 1)
 (clojure.math.combinatorics/combinations [1,2,3] 2)
 (clojure.math.combinatorics/combinations [1,2,3] 3)
