@@ -5,3 +5,7 @@
 A version in haskell (`main.hs`)
 
 A version in clojure (see the REPL log in `repl.log`)
+
+### Status
+
+This is work in progress. This is able to generate carts with two buckets, not generalized to more carts
