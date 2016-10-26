@@ -5,7 +5,7 @@ Responds to this user story:
 ```
 As a geek with passion for selling books
 given a list of books
-i want to generate all possible carts (combinations of books in series).
+I want to generate all possible carts (combinations of books in series).
 ```
 
 A serie might contain one or more books, order does not matter. a cart is a collection of series, order does not matter
